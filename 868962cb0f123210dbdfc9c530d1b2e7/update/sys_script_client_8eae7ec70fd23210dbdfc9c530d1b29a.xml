@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>servicenow_category</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Populate SubCategories</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading) return;
+
+    g_form.clearOptions('servicenow_sub_category');
+    g_form.setValue('servicenow_sub_category', '');
+
+    if (!newValue) return;
+
+    g_form.addOption('servicenow_sub_category', '', '-- Select Sub-Category --');
+
+    var categoryLabel = g_form.getDisplayValue('servicenow_category'); // <-- IMPORTANT
+
+    var ga = new GlideAjax('PulseCategoryAjax');
+    ga.addParam('sysparm_name', 'getSubCategories');
+    ga.addParam('sysparm_table', g_form.getValue('ticket_type'));
+    ga.addParam('sysparm_category', categoryLabel); // <-- label (e.g. "Database")
+    ga.getXMLAnswer(function (answer) {
+        if (!answer) return;
+
+        var subs = JSON.parse(answer);
+        for (var i = 0; i < subs.length; i++) {
+            g_form.addOption('servicenow_sub_category', subs[i].value, subs[i].label);
+        }
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-12 10:57:38</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>8eae7ec70fd23210dbdfc9c530d1b29a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Populate SubCategories</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pulse Migration ToolKit" source="x_918409_pulse_m_0">868962cb0f123210dbdfc9c530d1b2e7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pulse Migration ToolKit">868962cb0f123210dbdfc9c530d1b2e7</sys_scope>
+        <sys_update_name>sys_script_client_8eae7ec70fd23210dbdfc9c530d1b29a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-12 10:57:38</sys_updated_on>
+        <table>x_918409_pulse_m_0_category_map</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

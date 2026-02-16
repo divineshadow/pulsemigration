@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity_profile">
+    <oauth_entity_profile action="INSERT_OR_UPDATE">
+        <default>true</default>
+        <grant_type>client_credentials</grant_type>
+        <jwt_provider/>
+        <name>Halo Migration Oauth default_profile</name>
+        <oauth_entity display_value="Halo Migration Oauth">3ef2d0df0f5e3210dbdfc9c530d1b2c9</oauth_entity>
+        <oauth_resources/>
+        <saml2_assertion_producer/>
+        <sys_class_name>oauth_entity_profile</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-12 17:08:25</sys_created_on>
+        <sys_id>98a3d4130f9e3210dbdfc9c530d1b2a9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Halo Migration Oauth default_profile</sys_name>
+        <sys_package display_value="Pulse Migration ToolKit" source="x_918409_pulse_m_0">868962cb0f123210dbdfc9c530d1b2e7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pulse Migration ToolKit">868962cb0f123210dbdfc9c530d1b2e7</sys_scope>
+        <sys_update_name>oauth_entity_profile_98a3d4130f9e3210dbdfc9c530d1b2a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-12 17:27:55</sys_updated_on>
+    </oauth_entity_profile>
+</record_update>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_action_type_definition">
+    <sys_hub_action_type_definition action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <action_status/>
+        <action_template/>
+        <active>true</active>
+        <annotation/>
+        <attributes>{labelCacheCleanUpExecuted=true}</attributes>
+        <authored_on_release_version>28100</authored_on_release_version>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from/>
+        <copied_from_name/>
+        <description/>
+        <flow_priority/>
+        <ih_action>false</ih_action>
+        <internal_name>build_create_ticket_json</internal_name>
+        <label_cache/>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <master_snapshot_digest/>
+        <name>Build Create Ticket JSON</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <state>draft</state>
+        <sys_class_name>sys_hub_action_type_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-05 11:25:03</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a43be23a0f367a50dbdfc9c530d1b2ea</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Build Create Ticket JSON</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Pulse Migration ToolKit" source="x_918409_pulse_m_0">868962cb0f123210dbdfc9c530d1b2e7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pulse Migration ToolKit">868962cb0f123210dbdfc9c530d1b2e7</sys_scope>
+        <sys_update_name>sys_hub_action_type_definition_a43be23a0f367a50dbdfc9c530d1b2ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-05 11:25:03</sys_updated_on>
+        <system_level>false</system_level>
+        <type/>
+    </sys_hub_action_type_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_variable_value action="delete_multiple" query="document_key=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_step_instance action="delete_multiple" query="action=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_action_input action="delete_multiple" query="model=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_action_output action="delete_multiple" query="model=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_action_status_metadata action="delete_multiple" query="action_type_id=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_input_a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_action_output_a43be23a0f367a50dbdfc9c530d1b2ea"/>
+    <sys_hub_action_plan action="delete_multiple" query="action_id=a43be23a0f367a50dbdfc9c530d1b2ea"/>
+</record_update>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_918409_pulse_m_0.PulseCategoryAjax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>PulseCategoryAjax</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var PulseCategoryAjax = Class.create();
+PulseCategoryAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getCategories: function () {
+        var tableName = this.getParameter('sysparm_table');
+        if (!tableName)
+            return '[]';
+
+        var result = [];
+
+        var gr = new GlideRecord('sys_choice');
+        gr.addQuery('inactive', false);
+        gr.addQuery('name', tableName);
+        gr.addQuery('element', 'category');
+        gr.orderBy('label');
+        gr.query();
+
+        while (gr.next()) {
+            result.push({
+                value: gr.getValue('value'),
+                label: gr.getValue('label')
+            });
+        }
+
+        return new global.JSON().encode(result);
+    },
+
+	getSubCategories: function () {
+    var tableName = (this.getParameter('sysparm_table') || '').toString();
+    var categoryLabel = (this.getParameter('sysparm_category') || '').toString();
+
+    if (!tableName || !categoryLabel)
+        return '[]';
+
+    var result = [];
+    var gr = new GlideRecord('sys_choice');
+    gr.addQuery('inactive', false);
+    gr.addQuery('name', tableName);
+    gr.addQuery('element', 'subcategory');
+    gr.addQuery('dependent_value', categoryLabel); // <-- "Database"
+    gr.orderBy('label');
+    gr.query();
+
+    while (gr.next()) {
+        result.push({
+            value: gr.getValue('value'),
+            label: gr.getValue('label')
+        });
+    }
+
+    return new global.JSON().encode(result);
+},
+
+getStates: function () {
+    var tableName = (this.getParameter('sysparm_table') || '').toString();
+    if (!tableName)
+        return '[]';
+
+    var element = 'state';
+
+    // Table-specific overrides
+    if (tableName === 'sc_request')
+        element = 'request_state';
+    else if (tableName === 'sc_req_item')
+        element = 'stage';
+
+    var result = [];
+
+    var gr = new GlideRecord('sys_choice');
+    gr.addQuery('inactive', false);
+    gr.addQuery('name', tableName);
+    gr.addQuery('element', element);
+    gr.orderBy('sequence');
+    gr.orderBy('label');
+    gr.query();
+
+    while (gr.next()) {
+        result.push({
+            value: gr.getValue('value'),
+            label: gr.getValue('label')
+        });
+    }
+
+    return new global.JSON().encode(result);
+},
+
+
+getCloseCodes: function () {
+    var tableName = (this.getParameter('sysparm_table') || '').toString();
+    if (!tableName)
+        return '[]';
+
+    // Default behaviour
+    var element = 'close_code';
+
+    // Special case: Requests should map “closure” using status
+    if (tableName === 'sc_request')
+        element = 'request_state';
+
+    // Optional: if you also want RITMs to map “closure” using stage
+    // else if (tableName === 'sc_req_item')
+    //     element = 'stage';
+
+    var result = [];
+
+    var gr = new GlideRecord('sys_choice');
+    gr.addQuery('inactive', false);
+    gr.addQuery('name', tableName);
+    gr.addQuery('element', element);
+    gr.orderBy('sequence');
+    gr.orderBy('label');
+    gr.query();
+
+    while (gr.next()) {
+        result.push({
+            value: gr.getValue('value'),
+            label: gr.getValue('label')
+        });
+    }
+
+    return new global.JSON().encode(result);
+},
+
+getPriorities: function () {
+    var result = [];
+
+    var gr = new GlideRecord('sys_choice');
+    gr.addQuery('inactive', false);
+    gr.addQuery('name', 'task');
+    gr.addQuery('element', 'priority');
+    gr.orderBy('sequence');
+    gr.orderBy('label');
+    gr.query();
+
+    while (gr.next()) {
+        result.push({
+            value: gr.getValue('value'),
+            label: gr.getValue('label')
+        });
+    }
+
+    return new global.JSON().encode(result);
+},
+
+    type: 'PulseCategoryAjax'
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-01-12 10:31:45</sys_created_on>
+        <sys_id>92a83acb0f923210dbdfc9c530d1b2fb</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>PulseCategoryAjax</sys_name>
+        <sys_package display_value="Pulse Migration ToolKit" source="x_918409_pulse_m_0">868962cb0f123210dbdfc9c530d1b2e7</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Pulse Migration ToolKit">868962cb0f123210dbdfc9c530d1b2e7</sys_scope>
+        <sys_update_name>sys_script_include_92a83acb0f923210dbdfc9c530d1b2fb</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-01-12 13:26:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

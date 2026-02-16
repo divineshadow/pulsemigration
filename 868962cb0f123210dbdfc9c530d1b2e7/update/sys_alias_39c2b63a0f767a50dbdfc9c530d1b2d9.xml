@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_alias">
+    <sys_alias action="INSERT_OR_UPDATE">
+        <configuration_template/>
+        <connection_type>sys_connection</connection_type>
+        <id>x_918409_pulse_m_0.Halo</id>
+        <is_internal>false</is_internal>
+        <multiple_connections>false</multiple_connections>
+        <name>Halo</name>
+        <parent/>
+        <retry_policy display_value="Default SFTP Retry Policy">e385484773100010e3a71afe2ff6a709</retry_policy>
+        <sys_class_name>sys_alias</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-02-05 11:58:38</sys_created_on>
+        <sys_id>39c2b63a0f767a50dbdfc9c530d1b2d9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_918409_pulse_m_0.Halo</sys_name>
+        <sys_package display_value="Pulse Migration ToolKit" source="x_918409_pulse_m_0">868962cb0f123210dbdfc9c530d1b2e7</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Pulse Migration ToolKit">868962cb0f123210dbdfc9c530d1b2e7</sys_scope>
+        <sys_update_name>sys_alias_39c2b63a0f767a50dbdfc9c530d1b2d9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-02-05 11:58:38</sys_updated_on>
+        <type>credential</type>
+    </sys_alias>
+</record_update>

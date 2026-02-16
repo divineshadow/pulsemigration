@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ef96634b0f1a3210dbdfc9c530d1b234" label="Migration Run" max_length="40" name="x_918409_pulse_m_0_migration_run" type="collection">
+        <element label="Last Error" max_length="40" name="last_error" type="string"/>
+        <element label="Include Notes" max_length="40" name="include_notes" type="boolean"/>
+        <element label="Migration Tag" max_length="40" name="migration_tag" type="string"/>
+        <element label="Include Attachments" max_length="40" name="include_attachments" type="boolean"/>
+        <element label="Max Records" max_length="40" name="max_records" type="integer"/>
+        <element choice="3" default="new" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Queued" sequence="1" value="queued"/>
+                <element inactive_on_update="false" label="New" sequence="0" value="new"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="5" value="cancelled"/>
+                <element inactive_on_update="false" label="Complete" sequence="3" value="complete"/>
+                <element inactive_on_update="false" label="Failed" sequence="4" value="failed"/>
+                <element inactive_on_update="false" label="Running" sequence="2" value="running"/>
+            </choice>
+        </element>
+        <element label="Started" max_length="40" name="started" read_only="true" type="glide_date_time"/>
+        <element label="Processed Count" max_length="40" name="processed_count" type="integer"/>
+        <element label="Earliest Creation Date" max_length="40" name="earliest_creation_date" type="glide_date_time"/>
+        <element choice="3" default="all" label="Ticket Scope" max_length="40" name="ticket_scope" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Closed Only" sequence="2" value="closed_only"/>
+                <element inactive_on_update="false" label="Open Only" sequence="1" value="open_only"/>
+                <element inactive_on_update="false" label="All" sequence="0" value="all"/>
+            </choice>
+        </element>
+        <element label="Finished" max_length="40" name="finished" type="glide_date_time"/>
+        <element choice="1" label="Source Ticket Type" max_length="40" name="source_ticket_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Incident" sequence="100" value="incident"/>
+                <element inactive_on_update="false" label="Problem" sequence="200" value="problem"/>
+                <element inactive_on_update="false" label="Request" sequence="400" value="sc_request"/>
+                <element inactive_on_update="false" label="Change" sequence="300" value="change_request"/>
+            </choice>
+        </element>
+        <element label="Target Ticket Type" max_length="40" name="target_ticket_type" type="string"/>
+        <element label="Target SLA Name" max_length="40" name="target_sla_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+    </element>
+</database>

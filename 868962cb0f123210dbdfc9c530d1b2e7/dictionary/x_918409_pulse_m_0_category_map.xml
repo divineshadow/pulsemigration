@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="776c62430f523210dbdfc9c530d1b2f3" label="Category Map" max_length="40" name="x_918409_pulse_m_0_category_map" type="collection">
+        <element choice="1" label="ServiceNow Sub-Category" max_length="40" name="servicenow_sub_category" reference_qual="javascript:'name='+current.ticket_type+'^dependent_value='+current.servicenow_category+'^element=subcategory'" type="choice" use_reference_qualifier="advanced">
+            <choice/>
+        </element>
+        <element choice="1" label="ServiceNow Category" max_length="40" name="servicenow_category" type="choice">
+            <choice/>
+        </element>
+        <element choice="1" display="true" label="Ticket Type" max_length="40" name="ticket_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Request" sequence="3" value="sc_request"/>
+                <element inactive_on_update="false" label="Problem" sequence="1" value="problem"/>
+                <element inactive_on_update="false" label="Incident" sequence="0" value="incident"/>
+                <element inactive_on_update="false" label="Requested Item" sequence="4" value="sc_req_item"/>
+                <element inactive_on_update="false" label="Change" sequence="2" value="change_request"/>
+            </choice>
+        </element>
+        <element label="Halo Category" max_length="200" name="halo_category" type="string"/>
+    </element>
+</database>

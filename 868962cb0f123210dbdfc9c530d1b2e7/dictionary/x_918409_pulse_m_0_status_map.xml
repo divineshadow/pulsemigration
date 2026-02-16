@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="7b69434f0f163210dbdfc9c530d1b291" label="Status Map" max_length="40" name="x_918409_pulse_m_0_status_map" type="collection">
+        <element choice="1" label="ServiceNow Status" max_length="40" name="servicenow_status" type="choice">
+            <choice/>
+        </element>
+        <element choice="1" label="Ticket Type" max_length="40" name="ticket_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Incident" sequence="10" value="incident"/>
+                <element inactive_on_update="false" label="Request" sequence="40" value="sc_request"/>
+                <element inactive_on_update="false" label="Requested Item" sequence="50" value="sc_req_item"/>
+                <element inactive_on_update="false" label="Problem" sequence="20" value="problem"/>
+                <element inactive_on_update="false" label="Change Request" sequence="30" value="change_request"/>
+            </choice>
+        </element>
+        <element label="Halo Status" max_length="200" name="halo_status" type="string"/>
+        <element label="Halo Workflow Stage" max_length="40" name="halo_workflow_stage" type="string"/>
+    </element>
+</database>
